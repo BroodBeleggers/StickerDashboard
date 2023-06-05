@@ -53,3 +53,4 @@ col1.plotly_chart(fig, use_container_width=True)
 selected_location = col2.selectbox('Selecteer een locatie', df['Location'])
 if col2.button('Toon afbeelding'):
     selected_image = df[df['Location'] == selected_location]['ImageURL'].values[0]
+    col2.image(selected_image, width=300) # Control the width of the image
