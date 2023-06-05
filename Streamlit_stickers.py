@@ -4,7 +4,7 @@ import plotly.graph_objects as go
 
 # Read data from Google Sheets
 url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSiZdikc0W4OuCxPikz27_QtIek9hD1DPIPi43SxHdiNaXUiNpmuD0DV9hC25RV6J4sFDb1LpzaUtb6/pub?output=csv'
-df = pd.read_excel(url, sep=',')
+df = pd.read_csv(url, sep=',')
 
 # Create map figure
 fig = go.Figure(data=go.Scattermapbox(
