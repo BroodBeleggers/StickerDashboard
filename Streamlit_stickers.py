@@ -39,15 +39,15 @@ col1, col2 = st.columns([5,2])
 # Show map in the left column
 col1.plotly_chart(fig, use_container_width=True)
 
-# Function to extract file_id and create new URL
-def create_direct_link(url):
-    # Extract the file_id from the URL
-    file_id = url.split('=')[2]
-    # Create a new URL that directly accesses the file
-    return f'https://drive.google.com/uc?export=view&id={file_id}'
+## Function to extract file_id and create new URL
+#def create_direct_link(url):
+#    # Extract the file_id from the URL
+#    file_id = url.split('=')[2]
+#    # Create a new URL that directly accesses the file
+#    return f'https://drive.google.com/uc?export=view&id={file_id}'
 
-# Apply function to ImageURL column
-df['ImageURL'] = df['ImageURL'].apply(create_direct_link)
+## Apply function to ImageURL column
+#df['ImageURL'] = df['ImageURL'].apply(create_direct_link)
 
 # Create selection box and button in the right column
 selected_location = col2.selectbox('Selecteer een locatie', df['Location'])
