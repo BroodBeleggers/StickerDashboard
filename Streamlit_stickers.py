@@ -2,9 +2,9 @@ import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
 
-# Read data from CSV file in GitHub
-url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRUYAKrovEdIaaIi9UPDN5tjRHIxFZ6Lriwe9f5qd9SMbJx2B3DE4WV-GHHRS7p7Mf4RxgPB-EtZ9IR/pubhtml'
-df = pd.read_csv(url, sep=';')
+# Read data from Google Sheets
+url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRUYAKrovEdIaaIi9UPDN5tjRHIxFZ6Lriwe9f5qd9SMbJx2B3DE4WV-GHHRS7p7Mf4RxgPB-EtZ9IR/pub?output=csv'
+df = pd.read_(url, sep=';')
 
 # Create map figure
 fig = go.Figure(data=go.Scattermapbox(
