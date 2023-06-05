@@ -19,6 +19,7 @@ fig.update_layout(
     mapbox_style="open-street-map",
     geo_scope='world',
     autosize=True,
+    height=600,
     mapbox=dict(
         center=dict(
             lat=df['Latitude'].mean(),
@@ -29,10 +30,16 @@ fig.update_layout(
 )
 
 # Streamlit code
-st.plotly_chart(fig)
+# Set wide layout
+st.set_page_config(layout="wide", page_title="B.R.O.O.D. is overal")
 
-selected_location = st.selectbox('Kies een locatie', df['Location'])
+# Create a layout with two columns
+col1, col2 = st.columns([5,2])
 
-if st.button('Toon afbeelding'):
+# Show map in the left column
+col1.plotly_chart(fig, use_container_width=True)
+
+# Create selection box and button in the right column
+selected_location = col2.selectbox('Selecteer een locatie', df['Location'])
+if col2.button('Toon afbeelding'):
     selected_image = df[df['Location'] == selected_location]['ImageURL'].values[0]
-    st.image(selected_image)
